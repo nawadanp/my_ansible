@@ -1,0 +1,4 @@
+- name: Ensure fcron is in the latest version
+  portage: package=fcron update=yes noreplace=yes
+- name: Ensure fcron is started
+  service: name=fcron state=started

@@ -1,0 +1,9 @@
+- name: Ensure ansible-pull crontab exists
+  cron: name="Ansible pull" 
+        job="/usr/bin/ansible-pull -d /var/lib/my_ansible --url=git@github.com:nawadanp/my_ansible.git" 
+        minute=0
+- name: Sync portage and overlays
+  cron: name="Sync portage and overlays"
+        job="/usr/bin/emerge --sync --quiet && /usr/bin/layman --sync --quiet"
+        minute=30
+        hour=3
