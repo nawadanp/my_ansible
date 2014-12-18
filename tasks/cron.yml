@@ -1,0 +1,4 @@
+- name: Ensure ansible-pull crontab exists
+  cron: name="Ansible pull" 
+            job="/usr/bin/ansible-pull --only-if-changed -d /var/lib/my_ansible --url=git@github.com:nawadanp/my_ansible.git" 
+            minute=0
