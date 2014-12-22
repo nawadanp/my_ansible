@@ -1,0 +1,4 @@
+- name: Reload pdns
+  action: service name=pdns state=reloaded enabled=yes
+- name: Rediscover pdns
+  action: command /usr/bin/pdns_control rediscover

@@ -1,0 +1,12 @@
+domains:
+- domain: geo.nawadanp.eu
+  ttl: 3600
+  records:
+    geo.nawadanp.eu:
+      - soa: nawadanp.eu anthony.brodard.mem 2014122201 7200 3600 1209600 3600
+      - ns: nawadanp.eu
+      - a: 37.187.102.88
+    "*.geo.nawadanp.eu":
+      - cname: nawadanp.eu
+  services:
+    test.geo.nawadanp.eu: '%co.geo.nawadanp.eu'

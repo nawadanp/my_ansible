@@ -1,0 +1,26 @@
+cache-ttl=60
+receiver-threads=2
+distributor-threads=1
+daemon=yes
+disable-axfr=yes
+disable-tcp=no
+launch=gsqlite3
+launch+=geoip
+local-address={{ ansible_eth0['ipv4']['address'] }}
+local-port=53
+log-dns-details=yes
+log-dns-queries=yes
+logging-facility=
+loglevel=4
+max-cache-entries=1000000
+queue-limit=1500
+recursor=no
+setgid=pdns
+setuid=pdns
+version-string="Nawatest"
+gsqlite3-database=/etc/powerdns/zones.sqlite3
+geoip-database-file=/usr/share/GeoIP/GeoIP.dat
+geoip-zones-file=/etc/powerdns/geo.zone
+geoip-database-file6=/usr/share/GeoIP/GeoIPv6.dat
+
+

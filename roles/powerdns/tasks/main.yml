@@ -1,0 +1,12 @@
+- name: Deploy pdns uses flags
+  copy: src=pdns.use dest=/etc/portage/package.use/pdns.use
+- name: Install PowerDNS
+  portage: package=pdns noreplace=yes
+- name: Deploy pdns config
+  template: src=pdns.conf.j2 dest=/etc/powerdns/pdns.conf
+  notify:
+    - Reload pdns
+- name: Deploy geolocation zone file
+  copy: src=geo.zone dest=/etc/powerdns/geo.zone
+  notify:
+    - Rediscover pdns
