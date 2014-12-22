@@ -2,6 +2,8 @@
   copy: src=pdns.use dest=/etc/portage/package.use/pdns.use
 - name: Install PowerDNS
   portage: package=pdns noreplace=yes
+- name: Ensure pdns is started
+  service: name=pdns state=started enabled=yes 
 - name: Deploy pdns config
   template: src=pdns.conf.j2 dest=/etc/powerdns/pdns.conf
   notify:
