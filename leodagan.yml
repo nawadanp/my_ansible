@@ -1,4 +1,5 @@
 - hosts: itself
+  connection: local
   roles: 
     - cron
     - powerdns
