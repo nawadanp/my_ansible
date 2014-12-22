@@ -1,3 +1,4 @@
 - hosts: itself
   roles: 
+    - cron
     - powerdns
